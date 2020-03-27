@@ -1,19 +1,20 @@
 node_modules
 .DS_Store
+.idea
 lerna-debug.log
 npm-debug.log
 mochawesome-report
 .happypack
 package-lock.json
 yarn.lock
-*/blocks/**/lib/
-*/layouts/**/lib/
+yarn-error.log
+tempDir
+coverage/
 .eslintcache
 databases
 build
 .vscode/
-tools/ice-scripts/lib/ICE_CA
+.tmp/
 
-npmrc
-tools/extract-css-assets-webpack-plugin/test/actual/
-tools/extract-css-assets-webpack-plugin/lib/
+packages/generate-project/lib
+packages/ice-npm-utils/lib

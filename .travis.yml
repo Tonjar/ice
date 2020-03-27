@@ -1,15 +1,17 @@
 sudo: required
 language: node_js
 node_js:
-- '8'
+  - '8'
+install:
+  - npm install
+  - npm install codecov -g
 script:
-- npm run lint:nofix
-
+  - npm run ci
+after_script:
+  - codecov
 deploy:
   provider: script
   skip_cleanup: true # 避免清空已安装的依赖
-  script: node ./scripts/deploy.js && npm run generate && npm run sync
+  script: npm run generate:docs && npm run upload-oss
   on:
-    all_branches: true # 仅在 master | pre-depoly 分支进行 deploy
-    repo: alibaba/ice
-    condition: $TRAVIS_BRANCH =~ ^master|pre-depoly|beta$
+    all_branches: true

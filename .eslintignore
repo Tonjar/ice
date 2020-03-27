@@ -1,11 +1,9 @@
 # 忽略目录
 build/
+test/
 tests/
-demo/
-react-materials/layouts/**/lib/
-react-materials/blocks/**/lib/
 node_modules/
-scripts/
+dist/
 
 # node 覆盖率文件
 coverage/
@@ -14,8 +12,5 @@ coverage/
 **/*-min.js
 **/*.min.js
 
-# templorarily ignore tools
-tools/
-
-**/templates/**
-**/components/*/lib
+packages/generate-project/lib
+packages/ice-npm-utils/lib

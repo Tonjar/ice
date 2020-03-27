@@ -1,0 +1,50 @@
+{
+  "name": "ice-npm-utils",
+  "version": "1.4.0",
+  "description": "npm utils for ice",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "test": "NODE_ENV=unittest LOG_LEVEL=verbose jest",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@types/npmlog": "^4.1.2",
+    "mkdirp": "^0.5.1",
+    "npmlog": "^4.1.2",
+    "request": "^2.88.0",
+    "request-progress": "^3.0.0",
+    "request-promise": "^4.2.4",
+    "semver": "^6.0.0",
+    "tar": "^4.4.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/npmlog": "^4.1.2",
+    "jest": "^24.5.0",
+    "jest-extended": "^0.11.5",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "testPathIgnorePatterns": [
+      "lib/"
+    ],
+    "collectCoverage": true,
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}
